@@ -35,8 +35,12 @@
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
 
+    <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+
+    <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+
     {%- if settings.animations_reveal_on_scroll -%}
-      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'dev-info-modal.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
     {{ content_for_header }}
@@ -256,6 +260,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'dev-info-modal.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
@@ -372,5 +377,21 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <modal-dialog id="DevInfoModal" class="modal-dialog hidden">
+      <div class="modal-dialog__container" role="dialog" aria-labelledby="DevInfoTitle">
+        <button id="ModalClose-DevInfo" class="modal-dialog__close-button" type="button">
+          <svg viewBox="0 0 18 18" class="icon icon-close">
+            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z" fill="currentColor" />
+          </svg>
+        </button>
+        <div class="modal-dialog__content">
+          <h2 id="DevInfoTitle" class="modal-dialog__title">Developer Info</h2>
+          <div class="modal-dialog__content-container">
+            <p>Hello! This application is written by Nguyen Thanh Dung</p>
+          </div>
+        </div>
+      </div>
+    </modal-dialog>
   </body>
 </html>

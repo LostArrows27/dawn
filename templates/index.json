@@ -46,6 +46,10 @@
         "show_text_below": false
       }
     },
+    "dev-info": {
+      "type": "dev-info-button",
+      "settings": {}
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -200,6 +204,7 @@
     }
   },
   "order": [
+    "dev-info",
     "image_banner",
     "rich_text",
     "featured_collection",
